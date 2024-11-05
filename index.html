@@ -3,43 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cryptocurrency Market Data</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
-    th {
-      cursor: pointer;
-    }
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  </style>
+  <title> Market Price</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Cryptocurrency Market Data</h1>
-  <input type="text" id="searchInput" placeholder="Search...">
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Symbol</th>
-        <th>Image</th>
-        <th>Current Price (USD)</th>
-        <th>Market Cap (USD)</th>
-        <th>24h Change (%)</th>
-      </tr>
-    </thead>
-    <tbody id="coinTableBody">
-      <!-- Data will be inserted here -->
-    </tbody>
-  </table>
+
+  <div class="container">
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search By Name or Symbol" onkeyup="filterTable()">
+      <button onclick="sortByMarketCap()">Sort By Mkt Cap</button>
+      <button onclick="sortByPercentage()">Sort By Percentage</button>
+    </div>
+    
+    <table id="cryptoTable">
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
